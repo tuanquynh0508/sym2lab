@@ -1,0 +1,22 @@
+parameters:
+    sym2lab.formtest.form.phone_number.type.class: Lab\FormtestBundle\Form\Type\PhoneNumberFormType
+    sym2lab.formtest.form.group_contact.type.class: Lab\FormtestBundle\Form\Type\GroupContactFormType
+
+services:
+    sym2lab.formtest.form.phone_number.type:
+        class: %sym2lab.formtest.form.phone_number.type.class%
+
+    sym2lab.formtest.form.group_contact:
+        factory_method: createNamed
+        factory_service: form.factory
+        class: Symfony\Component\Form\Form
+        arguments:
+            - group_contact                            # name of the form
+            - "@sym2lab.formtest.form.group_contact.type"   # alias of the form type
+            - null                                  # data to bind, this is where your entity could go if you have that defined as a service
+            - { validation_groups: [Default] }      # validation groups
+
+    sym2lab.formtest.form.group_contact.type:
+        class: %sym2lab.formtest.form.group_contact.type.class%
+        arguments: ["@sym2lab.formtest.form.phone_number.type"]
+

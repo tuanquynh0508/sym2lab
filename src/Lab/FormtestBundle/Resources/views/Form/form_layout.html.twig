@@ -1,0 +1,19 @@
+
+{% block _group_contact_listPhoneNumbers_widget %}
+    {% set listPhoneNumbers = form %}
+    {% if listPhoneNumbers is not empty %}
+        {% for key, phoneNumber in listPhoneNumbers %}
+            <li>
+                <strong>
+                    {{ phoneNumber.vars.value.name }}
+                </strong>
+                {% if phoneNumber.vars.value.name|trim is not empty and phoneNumber.vars.value.name|trim is not null %}|{% endif %}
+                {{ form_errors(phoneNumber.phoneNumber) }}
+
+                {{ form_row(phoneNumber.name) }}
+                {{ form_row(phoneNumber.code) }}
+                {{ form_widget(phoneNumber.phoneNumber) }}
+            </li>
+        {% endfor %}
+    {% endif %}
+{% endblock _group_contact_listPhoneNumbers_widget %}

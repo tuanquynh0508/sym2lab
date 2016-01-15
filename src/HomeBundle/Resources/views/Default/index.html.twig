@@ -1,0 +1,14 @@
+{% extends 'HomeBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <center>
+        <h1>Symfony 2 Laboratories</h1>
+
+        {% image '@HomeBundle/Resources/public/img/symfony.png' %}
+        <img src="{{ asset_url }}" alt="Example" height="100" />
+        {% endimage %}
+    </center>
+
+{% endblock %}
+

@@ -1,0 +1,9 @@
+home:
+    resource: "@HomeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+lab_formtest:
+    resource: "@LabFormtestBundle/Controller/"
+    type:     annotation
+    prefix:   /lab
