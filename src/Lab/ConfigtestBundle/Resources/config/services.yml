@@ -1,0 +1,8 @@
+services:
+    lab_configtest.service.testconfig:
+        class: Lab\ConfigtestBundle\Service\TestConfigService
+        arguments:
+            - %lab_configtest.services.service1.url%
+            - %lab_configtest.services.service1.user%
+            - %lab_configtest.services.service1.password%
+            - %lab_configtest.services.service1.allow_ip%

@@ -7,3 +7,8 @@ lab_formtest:
     resource: "@LabFormtestBundle/Controller/"
     type:     annotation
     prefix:   /lab
+
+lab_configtest:
+    resource: "@LabConfigtestBundle/Controller/"
+    type:     annotation
+    prefix:   /lab
