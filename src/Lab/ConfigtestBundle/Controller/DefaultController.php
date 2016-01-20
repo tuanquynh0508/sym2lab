@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * @package FormtestBundle
  * @author Nguyen Nhu Tuan
  *
- * @Route("/config/iject")
+ * @Route("/config/inject")
  */
 class DefaultController extends Controller
 {

@@ -9,6 +9,20 @@
         <img src="{{ asset_url }}" alt="Example" height="100" />
         {% endimage %}
     </center>
-
+	
+	<h2>Config Test</h2>
+	<ul>
+		<li><a href="{{ path('lab_configtest_default_index') }}">Config injection</a></li>
+	</ul>
+	
+	<h2>Form Test</h2>
+	<ul>
+		<li><a href="{{ path('lab_formtest_formtype_demo1') }}">Sub form</a></li>
+	</ul>
+		
+	<h2>Serializer Test</h2>
+	<ul>
+		<li><a href="{{ path('lab_serializertest_default_index', {'code': 'HaiPhong'}) }}">JMSSerializerBundle Json to Model</a></li>
+	</ul>
 {% endblock %}
 

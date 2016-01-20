@@ -5,6 +5,7 @@ imports:
     - { resource: "@LabFormtestBundle/Resources/config/services.yml" }
     - { resource: "@HomeBundle/Resources/config/services.yml" }
     - { resource: "@LabConfigtestBundle/Resources/config/services.yml" }
+    - { resource: "@LabSerializertestBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -41,6 +42,8 @@ twig:
     form:
         resources:
             - 'LabFormtestBundle:Form:form_layout.html.twig'
+    globals:
+        weather_icon_url: "%openweathermap_img%"
 
 # Doctrine Configuration
 doctrine:

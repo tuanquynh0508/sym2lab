@@ -12,3 +12,8 @@ lab_configtest:
     resource: "@LabConfigtestBundle/Controller/"
     type:     annotation
     prefix:   /lab
+
+lab_serializertest:
+    resource: "@LabSerializertestBundle/Controller/"
+    type:     annotation
+    prefix:   /lab
