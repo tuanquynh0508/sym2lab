@@ -1,31 +1,59 @@
 {% extends 'HomeBundle::layout.html.twig' %}
 
 {% block banner %}
-<div class="jumbotron">
-    <div class="container">
-        <h1>Symfony 2 Laboratories</h1>
-        {% image '@HomeBundle/Resources/public/img/symfony.png' %}
-        <img src="{{ asset_url }}" alt="Example" height="100" />
-        {% endimage %}
-    </div>
-</div>
+	<div class="jumbotron">
+		<div class="container">
+			<center>
+				<h1>Symfony 2 Laboratories</h1>
+				{% image '@HomeBundle/Resources/public/img/symfony.png' %}
+				<img src="{{ asset_url }}" alt="Example" height="100" />
+				{% endimage %}
+			</center>
+		</div>
+	</div>
 {% endblock %}
 
 {% block body %}
 
-	<h2>Config Test</h2>
-	<ul>
-		<li><a href="{{ path('lab_configtest_default_index') }}">Config injection</a></li>
-	</ul>
+	<div class="row">
 
-	<h2>Form Test</h2>
-	<ul>
-		<li><a href="{{ path('lab_formtest_formtype_demo1') }}">Sub form</a></li>
-	</ul>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Config Test</div>
+				<div class="panel-body">
+					<p><a href="{{ path('lab_configtest_default_index') }}">Config injection</a></p>
+				</div>
+			</div>
+		</div>
 
-	<h2>Serializer Test</h2>
-	<ul>
-		<li><a href="{{ path('lab_serializertest_default_index', {'code': 'HaiPhong'}) }}">JMSSerializerBundle Json to Model</a></li>
-	</ul>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Form Test</div>
+				<div class="panel-body">
+					<p><a href="{{ path('lab_formtest_formtype_demo1') }}">Sub form</a></p>
+					<p><a href="{{ path('form_contact') }}">Contact form</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Serializer Test</div>
+				<div class="panel-body">
+					<p><a href="{{ path('lab_serializertest_default_index', {'code': 'HaiPhong'}) }}">JMSSerializerBundle Json to Model</a></p>
+				</div>
+			</div>
+		</div>
+				
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Database Test</div>
+				<div class="panel-body">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 {% endblock %}
 

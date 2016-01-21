@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Lab\FormtestBundle\Form\Model\GroupContact;
 use Lab\FormtestBundle\Form\Model\PhoneNumber;
-
+use Lab\FormtestBundle\Form\Type\ContactType;
 /**
  * The controller form test.
  *
@@ -40,6 +40,25 @@ class FormtypeController extends Controller
 
         $form->handleRequest($request);
         if ($form->isValid()) {
+            var_dump($request->request);
+            echo "OK";die;
+        }
+
+        return array(
+            'form' => $form->createView(),
+        );
+    }
+	
+	/**
+     * @Route("/contact", _name="form_contact")
+     * @Template("LabFormtestBundle:Formtype:contact.html.twig")
+     */
+    public function contactAction(Request $request)
+    {
+        $form = $this->createForm(new ContactType());
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
             var_dump($request->request);
             echo "OK";die;
         }

@@ -1,8 +1,9 @@
-{% extends 'LabFormtestBundle::layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <h2>Symfony 2 form service</h2>
+	<div class="page-header">
+		<h1>Symfony 2 form service</h1>
+	</div>
     <small>To use the Symfony 2 form factory to create the form in the service container, add the following to your services config file.</small>
 
     {{ form_start(form) }}

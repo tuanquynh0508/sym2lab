@@ -28,10 +28,10 @@ class DefaultController extends Controller
     public function indexAction($code)
     {
 		$serializer = $this->get('jms_serializer');
-		//$dataFilename = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Resources'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'hanoi.json');
-		$url = $this->container->getParameter('openweathermap_url');
-		$url = str_replace('{code}', urlencode($code), $url);
-		$dataJson = file_get_contents($url);
+		$dataFilename = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Resources'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'hanoi.json');
+		//$url = $this->container->getParameter('openweathermap_url');
+		//$url = str_replace('{code}', urlencode($code), $url);
+		$dataJson = file_get_contents($dataFilename);
 		$data = $serializer->deserialize($dataJson, 'Lab\SerializertestBundle\Model\Weather', 'json');
 		
         return array('data' => $data);

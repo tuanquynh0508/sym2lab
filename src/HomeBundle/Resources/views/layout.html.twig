@@ -35,10 +35,11 @@
 
         <div class="container">
         {% block body %}{% endblock %}
-        <footer>
+        </div>
+		
+		<footer>
             <p>&copy; {{ 'now'|date("Y") }} tuanquynh0508@gmail.com</p>
         </footer>
-        </div>
 
         {% include '::js.html.twig' %}
         {% block javascripts %}{% endblock %}

@@ -21,7 +21,11 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $testConfigService = $this->get('lab_configtest.service.testconfig');
-        echo $testConfigService;die;
-        return $this->render('LabConfigtestBundle:Default:index.html.twig');
+        return $this->render(
+			'LabConfigtestBundle:Default:index.html.twig',
+			array(
+				'testConfigService' => $testConfigService
+			)
+		);
     }
 }
