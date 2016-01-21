@@ -10,4 +10,9 @@
 /vendor/
 /web/bundles/
 /nbproject/
+/web/css/compiled/
+/web/js/compiled/
+/bin/
+/build/
+/node_modules/
 /symfony

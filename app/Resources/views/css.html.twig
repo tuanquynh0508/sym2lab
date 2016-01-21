@@ -1,0 +1,9 @@
+{% stylesheets
+    '@HomeBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+    '@HomeBundle/Resources/public/css/style.css'
+    filter='cssrewrite'
+    output='css/compiled/base.css'
+%}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+{% endstylesheets %}
+

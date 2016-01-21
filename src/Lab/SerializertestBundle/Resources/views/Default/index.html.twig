@@ -1,33 +1,44 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	{% stylesheets 'bundles/labserializertest/owfont/css/owfont-regular.min.css' filter='cssrewrite' %}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
 {% block body %}
 
     <h2>Demo JMSSerializerBundle</h2>
     <small>Mapping Json to Model</small>
-	
+
 	<p><a href="https://github.com/schmittjoh/JMSSerializerBundle">https://github.com/schmittjoh/JMSSerializerBundle</a></p>
 	<p><a href="http://jmsyst.com/bundles/JMSSerializerBundle">http://jmsyst.com/bundles/JMSSerializerBundle</a></p>
-	
+
 	<p>
-		Demo: 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Ha Noi'}) }}">Hà Nội</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Hai Phong'}) }}">Hải Phòng</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Hue'}) }}">Hue</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Ho Chi Minh'}) }}">HoChiMinh</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Da Nang'}) }}">Đà Nẵng</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'London'}) }}">London</a> | 
-		<a href="{{ path('lab_serializertest_default_index', {'code': 'Paris'}) }}">Paris</a> | 
+		Demo:
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Ha Noi'}) }}">Hà Nội</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Hai Phong'}) }}">Hải Phòng</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Hue'}) }}">Hue</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Ho Chi Minh'}) }}">HoChiMinh</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Da Nang'}) }}">Đà Nẵng</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'London'}) }}">London</a> |
+		<a href="{{ path('lab_serializertest_default_index', {'code': 'Paris'}) }}">Paris</a> |
 		<a href="{{ path('lab_serializertest_default_index', {'code': 'NewYork'}) }}">New York</a>
 	</p>
-	
+
     <h3>{{ data.city.name }}</h3>
 	<p>Country code: {{ data.city.country }} - longitude: {{ data.city.coord.lon }} - latitude: {{ data.city.coord.lat }} </p>
-	
+
 	<table border="1" cellpadding="10" cellspacing="2">
 		<tbody>
 			{% for daily in data.list %}
+			{% set suffix = '-d' %}
+
 			<td>
-				<p><img src="{{ weather_icon_url }}{{ daily.weather[0].icon }}.png"/></p>
+				<p>
+					{# <img src="{{ weather_icon_url }}{{ daily.weather[0].icon }}.png"/> #}
+					<i class="owf owf-{{ daily.weather[0].id }}{{ suffix }} owf-5x"></i>
+				</p>
 				<p>
 					Date: {{ daily.dt|date("d/m/Y") }}<br/>
 					({{ daily.weather[0].main }} - {{ daily.weather[0].description }})<br/>

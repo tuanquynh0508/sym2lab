@@ -17,6 +17,6 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
-	
-	openweathermap_img: http://openweathermap.org/img/w/
+
+    openweathermap_img: http://openweathermap.org/img/w/
     openweathermap_url: http://api.openweathermap.org/data/2.5/forecast/daily?q={code}&mode=json&units=metric&cnt=7&appid=2de143494c0b295cca9337e1e96b00e0

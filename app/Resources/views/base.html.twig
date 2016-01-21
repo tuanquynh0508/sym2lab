@@ -3,11 +3,44 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {% include '::css.html.twig' %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Symfony 2 Laboratories</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ path('home_default_index') }}">Home</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        {% if block('banner') %}
+        {% block banner %}{% endblock %}
+        {% endif %}
+
+        <div class="container">
         {% block body %}{% endblock %}
+        <footer>
+            <p>&copy; {{ 'now'|date("Y") }} tuanquynh0508@gmail.com</p>
+        </footer>
+        </div>
+
+        {% include '::js.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
